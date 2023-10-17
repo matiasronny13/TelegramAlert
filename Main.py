@@ -25,7 +25,7 @@ def get_google_alert_spreadsheet():
     credentials = SignedJwtAssertionCredentials(json_key['client_email'], json_key['private_key'].encode(), scope)
 
     file = gspread.authorize(credentials)  # authenticate with Google
-    sheet = file.open_by_key('1hwCmkin9YcM34tu1SN5tcf6H0pQFuG_imwz3ecqKyng').sheet1  # open sheet
+    sheet = file.open_by_key('1hwCmkin9YcM34tu1SN5tcf6H0pQFuG_imwz3yuhgyng').sheet1  # open sheet
     return sheet
 
 
@@ -93,7 +93,7 @@ def main():
 
 if __name__ == "__main__":
     print('Start')
-    updater = Updater(token='855752600:AAGNLK9VCkMzPhSkWlBBkiyz4ct5lqqNWBU', use_context=True)
+    updater = Updater(token='855752600:AAGNLK9VCkMzPhSkWlBBkiyz4ct5lqtutui6', use_context=True)
     updater.bot.send_message(chat_id=645832944, text="[{0}] Daily Scan Begins ...".format(datetime.datetime.now()))
     main()  # initial run
     schedule.every(10).minutes.do(main)
